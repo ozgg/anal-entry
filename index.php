@@ -1,4 +1,5 @@
 <?php
-header('Content-Type: text/plain;charset=UTF-8');
+require_once __DIR__ . '/app/Sphincter.php';
+$sphincter = new Sphincter(__DIR__);
+$sphincter->relax();
 ?>
-Oh, hi!
