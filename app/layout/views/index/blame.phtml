@@ -1,1 +1,6 @@
+<?php
+/** @var $blame Blame */
+$permalink = sprintf('<a href="/blame/%1$s" title="Ссылка на обвинение">#%1$s</a>', $blame->getIndex());
+?>
 <div id="blame-text"><?php echo $blame; ?></div>
+<div class="permalink"><?php echo $permalink; ?></div>

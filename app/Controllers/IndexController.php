@@ -8,6 +8,7 @@ class IndexController
     public function __construct($viewDir, array $parameters = array())
     {
         $this->_viewDir = $viewDir;
+        $this->_parameters = $parameters;
     }
 
     public function __call($method, $args)
@@ -19,8 +20,8 @@ class IndexController
 
     public function indexAction()
     {
-        $this->render('index');
         $this->_title = 'Anal entry';
+        $this->render('index', array('blame' => new Blame()));
     }
 
     public function aboutAction()
@@ -31,7 +32,12 @@ class IndexController
 
     public function blameAction()
     {
-        $blame = 'Blame!';
+        if (!empty($this->_parameters[0])) {
+            $id = intval($this->_parameters[0]);
+        } else {
+            $id = 0;
+        }
+        $blame = new Blame($id);
         $this->_title = 'Anal Entry / ';
         $this->render('blame', array('blame' => $blame));
     }

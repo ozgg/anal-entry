@@ -9,6 +9,7 @@ class Sphincter
     {
         $this->_root  = $root;
         $this->_query = isset($_GET['q']) ? $_GET['q'] : '';
+        require_once __DIR__ . '/Models/Blame.php';
     }
 
     public function relax()
@@ -26,7 +27,7 @@ class Sphincter
         $route = array(
             'controller' => 'index',
             'action' => 'index',
-            'parameters' => array(),
+            'remains' => array(),
         );
         if (!empty($parts[0])) {
             $first = array_shift($parts);
@@ -45,7 +46,7 @@ class Sphincter
         $name = ucfirst($route['controller']) . 'Controller';
         if (file_exists("{$dir}/{$name}.php")) {
             require_once "{$dir}/{$name}.php";
-            $controller = new $name(__DIR__ . '/layout/views', $route['parameters']);
+            $controller = new $name(__DIR__ . '/layout/views', $route['remains']);
         } else {
             $controller = null;
         }
