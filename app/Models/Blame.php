@@ -16,7 +16,18 @@ class Blame
 
     public function __toString()
     {
-        return "Это из-за тебя {$this->_phrases[$this->_index]}!";
+        $variants = array(
+            'Это из-за тебя',
+            'Это исключительно по твоей вине',
+            'Это по твоей вине',
+            'Только из-за тебя',
+            'По твоей вине',
+            'Исключительно из-за тебя',
+            'Это исключительно из-за тебя',
+        );
+        $index = rand(0, count($variants) - 1);
+        $end = rand(0, 1) ? '.' : '!';
+        return "{$variants[$index]} {$this->_phrases[$this->_index]}{$end}";
     }
 
     public function getPhrase()

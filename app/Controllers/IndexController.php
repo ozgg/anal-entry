@@ -26,7 +26,8 @@ class IndexController
 
     public function aboutAction()
     {
-        $this->render('about');
+        $blame = new Blame();
+        $this->render('about', array('blame' => $blame));
         $this->_title = 'О сайте «Вход в жопу»';
     }
 
