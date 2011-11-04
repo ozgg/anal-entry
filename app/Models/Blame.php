@@ -16,7 +16,12 @@ class Blame
 
     public function __toString()
     {
-        return "Это из-за тебя {$this->_phrases[$this->_index]}";
+        return "Это из-за тебя {$this->_phrases[$this->_index]}!";
+    }
+
+    public function getPhrase()
+    {
+        return $this->_phrases[$this->_index];
     }
 
     public function getIndex()

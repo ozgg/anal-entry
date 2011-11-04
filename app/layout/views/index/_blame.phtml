@@ -1,0 +1,9 @@
+<?php
+/** @var $blame Blame */
+$permalink = sprintf('<a href="/blame/%1$s" title="Ссылка на обвинение">#%1$s</a>', $blame->getIndex());
+?>
+<div id="blame-block">
+    <p class="blame"><?php echo $blame; ?></p>
+    <p class="permalink"><?php echo $permalink; ?></p>
+</div>
+<?php include __DIR__ . '/_socials.phtml'; ?>

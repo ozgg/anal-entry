@@ -20,14 +20,14 @@ class IndexController
 
     public function indexAction()
     {
-        $this->_title = 'Anal entry';
+        $this->_title = 'Вход в жопу. Ответы на вопросы.';
         $this->render('index', array('blame' => new Blame()));
     }
 
     public function aboutAction()
     {
         $this->render('about');
-        $this->_title = 'Anal Entry / О сайте';
+        $this->_title = 'О сайте «Вход в жопу»';
     }
 
     public function blameAction()
@@ -38,7 +38,7 @@ class IndexController
             $id = 0;
         }
         $blame = new Blame($id);
-        $this->_title = 'Anal Entry / ';
+        $this->_title = "Почему {$blame->getPhrase()}? [Анальный вход]";
         $this->render('blame', array('blame' => $blame));
     }
 
