@@ -1,6 +1,12 @@
 <script type="text/javascript" src="//yandex.st/share/share.js" charset="utf-8"></script>
 
 <div class="social-buttons">
-    <div class="google-plusone"><div class="g-plusone" data-size="standard" data-count="true"></div></div>
     <div class="yashare-auto-init" data-yashareL10n="ru" data-yashareType="icon" data-yashareQuickServices="yaru,vkontakte,facebook,twitter,odnoklassniki,moimir,lj"></div>
+    <div class="google-plusone"><div class="g-plusone" data-size="standard" data-count="true"></div></div>
+    <div id="vk_like"></div>
+    <div class="fb-like" data-send="false" data-layout="button_count" data-width="200" data-show-faces="true"></div>
+
+    <script type="text/javascript">
+    VK.Widgets.Like("vk_like", {type: "mini"});
+    </script>
 </div>
