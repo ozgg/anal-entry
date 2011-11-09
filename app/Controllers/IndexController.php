@@ -20,7 +20,7 @@ class IndexController
 
     public function indexAction()
     {
-        $this->_title = 'Вход в жопу. Ответы на вопросы.';
+        $this->_title = 'Вход в жопу. Демотивация и ответы на вопросы.';
         $this->render('index', array('blame' => new Blame()));
     }
 
